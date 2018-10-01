@@ -33,10 +33,16 @@ public:
     ofVec2f getCorner(int i) {
         return corners[i];
     }
+
+	ofVec2f * getCorners() {
+		return corners;
+	}
+
     ofVec2f getCenter() {
         return (corners[0]+corners[1]+corners[2]+corners[3])/4;
     }
-    bool isSorted() {
+
+	bool isSorted() {
         ofVec2f c = getCenter();
         return corners[0].x < c.x && corners[0].y < c.y &&
             corners[1].x > c.x && corners[1].y < c.y &&
